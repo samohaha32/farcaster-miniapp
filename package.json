@@ -1,0 +1,9 @@
+{
+  "name": "farcaster-miniapp",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.19.2",
+    "ethers": "^6.10.0"
+  }
+}
