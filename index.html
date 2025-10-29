@@ -5,29 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Farcaster MiniApp</title>
 
-  <!-- УДОБНО: меняем домен в одном месте -->
-  <!-- ЗАМЕНИ на свой: -->
-  <!-- const DOMAIN = 'https://farcaster-miniapp-rho.vercel.app'; -->
-  <script>
-    const DOMAIN = 'https://farcaster-miniapp-rho.vercel.app';
-    document.write(`
-      <meta name="fc:frame" content="vNext" />
-      <!-- ОЧЕНЬ ВАЖНО: og:image обязателен -->
-      <meta property="og:image" content="${DOMAIN}/cover.png" />
-      <!-- можно оставить и fc:frame:image -->
-      <meta name="fc:frame:image" content="${DOMAIN}/cover.png" />
+  <!-- ОБЯЗАТЕЛЬНО для Farcaster Frames -->
+  <meta name="fc:frame" content="vNext" />
+  <meta property="og:title" content="Answer the question" />
+  <meta name="fc:frame:image" content="https://farcaster-miniapp-rho.vercel.app/cover.png" />
 
-      <!-- Кнопки: действие post, без :target -->
-      <meta name="fc:frame:button:1" content="Yes" />
-      <meta name="fc:frame:button:1:action" content="post" />
+  <!-- Кнопка 1 -->
+  <meta name="fc:frame:button:1" content="Yes" />
+  <meta name="fc:frame:button:1:action" content="post" />
+  <meta name="fc:frame:button:1:target" content="https://farcaster-miniapp-rho.vercel.app/api/yes" />
 
-      <meta name="fc:frame:button:2" content="No" />
-      <meta name="fc:frame:button:2:action" content="post" />
+  <!-- Кнопка 2 -->
+  <meta name="fc:frame:button:2" content="No" />
+  <meta name="fc:frame:button:2:action" content="post" />
+  <meta name="fc:frame:button:2:target" content="https://farcaster-miniapp-rho.vercel.app/api/no" />
 
-      <!-- Куда Farcaster шлёт POST при клике -->
-      <meta name="fc:frame:post_url" content="${DOMAIN}/api/status" />
-    `);
-  </script>
+  <!-- Куда Farcaster шлёт результат -->
+  <meta name="fc:frame:post_url" content="https://farcaster-miniapp-rho.vercel.app/api/status" />
 </head>
 <body>
   <p>Open this link in Warpcast to see the Frame.</p>
